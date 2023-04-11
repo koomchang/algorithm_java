@@ -1,4 +1,4 @@
-package inflearn_algorithm.src.a_01_01;
+package inflearn_algorithm.a_01_01;
 
 import java.util.Scanner;
 
