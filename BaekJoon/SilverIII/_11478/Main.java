@@ -15,20 +15,16 @@ public class Main {
 
     public int solution(String str) {
         int answer = 0;
-        char[] chars = str.toCharArray();
         Set<String> set = new HashSet<>();
-        int tmp = 1;
-        while (tmp <= str.length()) {
-            for (int i = 0; i < str.length(); i++) {
-                StringBuilder charsToString = new StringBuilder();
-                for (int j = i; j < tmp; j++) {
-                    charsToString.append(chars[j]);
-                }
-                set.add(charsToString.toString());
+        int len = str.length();
+        for (int i = 0; i < len; i++) {
+            StringBuilder charToString = new StringBuilder();
+            for (int j = i; j < len; j++) {
+                charToString.append(str.charAt(j));
+                set.add(charToString.toString());
             }
-            tmp++;
         }
-        answer = set.size() - 1;
+        answer = set.size();
         return answer;
     }
 }
