@@ -8,14 +8,13 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String[] split = br.readLine().split("");
+        char[] charArray = br.readLine().toCharArray();
         int[] freq = new int[26];
-        for (String s : split) {
-            char c = s.charAt(0);
+        for (char c : charArray) {
             freq[c - 'a']++;
         }
-        for (int j : freq) {
-            System.out.print(j + " ");
+        for (int i : freq) {
+            System.out.print(i + " ");
         }
     }
 }
