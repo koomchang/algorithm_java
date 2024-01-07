@@ -1,35 +1,26 @@
 package inflearn_algorithm._01_01;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
-class Main {
+public class Main {
 
-    public int solution(String str, char t) {
-        int answer = 0;
-        str = str.toUpperCase();
-        t = Character.toUpperCase(t);
-        /*
-        for(int i = 0; i < str.length(); i++){
-            if (str.charAt(i) == t){
-                answer += 1;
-            }
-        }
-        */
-
-        for (char x : str.toCharArray()) {
-            if (x == t) {
-                answer += 1;
-            }
-        }
-
-        return answer;
+    public static void main(String[] args) throws IOException {
+        Main main = new Main();
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String input = br.readLine().toLowerCase();
+        char alphabet = br.readLine().toLowerCase().charAt(0);
+        System.out.println(main.solution(input, alphabet));
     }
 
-    public static void main(String[] args) {
-        Main T = new Main();
-        Scanner kb = new Scanner(System.in);
-        String str = kb.next();
-        char c = kb.next().charAt(0);
-        System.out.println(T.solution(str, c));
+    private int solution(String input, char alphabet) {
+        int answer = 0;
+        for (char c : input.toCharArray()) {
+            if (c == alphabet) {
+                answer++;
+            }
+        }
+        return answer;
     }
 }
