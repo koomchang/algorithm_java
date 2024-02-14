@@ -3,21 +3,23 @@ package BaekJoon.BronzeI._1546;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int testCases = sc.nextInt();
-        int[] arr = new int[testCases];
-        int max = Integer.MIN_VALUE;
-        for (int i = 0; i < testCases; i++) {
+        int N = sc.nextInt();
+        int[] arr = new int[N];
+        for (int i = 0; i < N; i++) {
             arr[i] = sc.nextInt();
-            max = Math.max(arr[i], max);
         }
-        double[] arr2 = new double[testCases];
-        double sum = 0;
-        for (int i = 0; i < testCases; i++) {
-            arr2[i] = (double) arr[i] / max * 100;
-            sum += arr2[i];
+        long max = 0;
+        long sum = 0;
+        for (int i = 0; i < N; i++) {
+            if (max < arr[i]) {
+                max = arr[i];
+            }
+            sum += arr[i];
         }
-        System.out.println(sum / testCases);
+        double answer = sum * 100.0 / max / N;
+        System.out.println(answer);
     }
 }
