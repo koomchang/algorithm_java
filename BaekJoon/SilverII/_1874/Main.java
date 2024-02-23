@@ -8,24 +8,22 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int sequence = 1;
+        int index = 1;
         Stack<Integer> stack = new Stack<>();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
-            int num = sc.nextInt();
-            if (num >= sequence) {
-                while (num >= sequence) {
-                    stack.push(sequence++);
+            int input = sc.nextInt();
+            if (input >= index) {
+                while (input >= index) {
+                    stack.push(index++);
                     sb.append("+\n");
                 }
                 stack.pop();
                 sb.append("-\n");
             } else {
-                int pop = stack.pop();
-                if (pop > num) {
+                if (stack.pop() > input) {
                     System.out.println("NO");
                     return;
-
                 } else {
                     sb.append("-\n");
                 }
