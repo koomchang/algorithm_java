@@ -1,4 +1,4 @@
-package inflearn_algorithm._01_10;
+package inflearn_algorithm._01._10;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

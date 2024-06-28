@@ -1,4 +1,4 @@
-package inflearn_algorithm._01_02;
+package inflearn_algorithm._01._03;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,15 +13,14 @@ public class Main {
     }
 
     private static String solution(String s) {
-        StringBuilder sb = new StringBuilder();
-        for (char c : s.toCharArray()) {
-            if (c >= 65 && c <= 90) {
-                c += 32;
-            } else {
-                c -= 32;
+        int value = Integer.MIN_VALUE;
+        String answer = "";
+        for (String str : s.split(" ")) {
+            if (str.length() > value) {
+                value = str.length();
+                answer = str;
             }
-            sb.append(c);
         }
-        return sb.toString();
+        return answer;
     }
 }
